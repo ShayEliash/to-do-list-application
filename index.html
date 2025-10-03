@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="container">
+        <h1>Task management app with data import from API</h1>
+    </header>
+
+    <main class="container">
+        <!-- Add Task -->
+        <section class="card">
+            <h2 class="sr-only">Add a new task</h2>
+            <form id="add-form" class="add-row" autocomplete="off">
+                <label class="sr-only" for="task-text">Task</label>
+                <input id="task-text" type="text" placeholder="Enter a task..." maxlength="120" required />
+                <label class="sr-only" for="task-date">Due date</label>
+                <input id="task-date" type="date" required />
+                <button id="add-btn" type="submit">Add</button>
+            </form>
+        </section>
+
+        <!-- Filters & Sort -->
+        <section class="card controls">
+            <h2 class="sr-only">Filters and sorting</h2>
+            <div class="filters" role="group" aria-label="Filter tasks">
+                <button type="button" class="chip" data-filter="all" aria-pressed="true">All</button>
+                <button type="button" class="chip" data-filter="active" aria-pressed="false">Active</button>
+                <button type="button" class="chip" data-filter="completed" aria-pressed="false">Completed</button>
+            </div>
+            <div class="sort">
+                <button id="sort-btn" type="button" title="Sort by due date (earliest first)">Sort by due date</button>
+            </div>
+        </section>
+
+        <!-- Status -->
+        <p id="status" role="status" aria-live="polite" class="muted">Loading…</p>
+
+        <!-- Task List -->
+        <section class="card">
+            <h2 class="sr-only">Tasks</h2>
+            <ul id="task-list" class="task-list" aria-label="Tasks list"></ul>
+        </section>
+    </main>
+
+    <footer class="container footer muted">
+        <p>© 2025 Created by Shay Eliash. All rights reserved</p>
+    </footer>
+</body>
+
+</html>
