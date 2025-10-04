@@ -168,7 +168,15 @@ button:active {
 }
 
 /* Responsive To Mobile */
-@media (max-width: 640px) {
+@media (max-width: 576px) {
+    header h1 {
+        color: #222;
+        text-align: center;
+        font-size: 1.1rem;
+        font-family: Lucida Sans Regular;
+        line-height: 2;
+    }
+
     .add-row {
         grid-template-columns: 1fr 1fr;
     }
